@@ -1,0 +1,293 @@
+$white:#fff;
+$color-header:#232C31;
+$color-text-1:#232C31;
+$color-text-2:#777777;
+$color-background:#F0F0F0;
+$color-border:#F5F5F5;
+$color-red:#F34207;
+$color-orange:#F38207;
+$color-yellow:#F3C007;
+$color-blue:#07ACF3;
+
+
+html,body {
+	font-family: Roboto, 'sans-serif';
+	font-size: 100%;
+	background: $color-background;
+	color: $color-text-1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	height: 100%;
+}
+
+/* Resseta as classes do Pushpin, na index*/
+.pinned {position: fixed !important; top: 50px !important;}
+.pin-top {position: relative !important;top: 50px !important;}
+
+/* Resseta todas as sombras dos componentes do Materialize */
+.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-small, .btn-floating, .dropdown-content, .collapsible, .sidenav {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+/* Reseta componente de TAB - Faz com que, no swipe, o conteúdo alcance 100% da tela */
+.tabs-content.carousel { height: 100%; overflow-x:hidden; overflow-y: scroll; } .tabs-content.carousel .carousel-item { width: 100%; height: 100%; }
+
+header {
+
+	nav.top {
+		color: $white;
+		background-color: $color-header;
+		width: 100%;
+		height: 50px;
+		line-height: 56px;
+		position: fixed;
+		top: 0;
+		z-index: 999;
+
+		h1 {
+			font-size: 4.2rem;
+			line-height: initial;
+			margin: 0;
+		}
+
+		.nav-wrapper {
+			position: relative;
+			height: 100%;
+		}
+
+		.brand-logo {
+			position: absolute;
+			color: $white;
+			display: inline-block;
+			font-size: 1.25rem;
+			padding: 0;
+			top: 5px;
+			width: 85%;
+
+			img {
+				width: 120px;
+			}
+
+			span {
+				font-size: 0.75rem;
+				display: block;
+				opacity: 0.8;
+			}
+
+			i {
+				height: 35px;
+				line-height: 35px;
+				width: 26px;
+			}
+		}
+	}
+
+	nav.nav-extended {
+		color: $white;
+		background-color: $color-header;
+		position: fixed;
+		top: 50px;
+		z-index: 999;
+
+		/* Reseta o item em foco nas tabs*/
+		.tabs .tab a:focus, .tabs .tab a:focus.active {
+			background-color: initial;
+			outline: none;
+		}
+		
+	}
+
+	/* Corrige a header fixada ao topo, pois os elementos estavam passando por trás, por causa do position:fixed. As duas classes abaixo ficam por trás ocupando o espaço da header*/
+	.nav-top-fix-fixed-height {height: 50px;}
+	.nav-extended-fix-fixed-height {height: 48px;}
+}
+
+.card-list {
+
+	.wrap-data {
+		height: 33px;
+		top: -50px;
+		position: relative;
+
+		.data {
+			display: block;
+			background: $color-background;
+			padding: 5px 0 5px 0;
+			width: 100%;
+			z-index: 998;
+			padding: 5px;
+		}
+	}
+
+	.card {
+		position: relative;
+		margin: 5px;
+		background-color: $white;
+		-webkit-transition: -webkit-box-shadow .25s;
+		transition: -webkit-box-shadow .25s;
+		transition: box-shadow .25s;
+		transition: box-shadow .25s, -webkit-box-shadow .25s;
+		border-radius: 5px;
+
+		.card-content {
+			padding: 0;
+			border-radius: 0;
+		}
+
+		&.horizontal {
+			padding: 5px;
+			display: inline-flex;
+			.card-image {
+				img {
+					width: 45px;
+					height: 45px;
+					border-radius: 100%;
+				}
+
+			} 
+
+			.card-stacked {
+				color: $color-text-2;
+				.card-content {
+					margin: 0 0 10px 10px;
+					&:last-child {
+						margin:0 0 0 10px;
+					}
+
+					h3 {
+						font-size: 1rem;
+						font-weight: 500;
+						font-style: italic;
+						margin: 0;
+						color: $color-red;
+					}
+					h4 {
+						font-size: 0.87rem;
+						font-weight: 400;
+						margin: 5px 0 0 0;
+					}
+
+					.party-type {
+						padding: 3px;
+						border: 1px solid;
+						border-radius: 3px;
+						line-height: initial;
+						font-size: 0.68rem;
+						font-weight: 500;
+						text-transform: uppercase;
+					}
+					.party-location {
+						font-size: 0.87rem;
+						font-weight: 300;
+
+						.fa {
+							margin: 0 5px 0 0;
+						}
+					}
+					.openbar {
+						color: $color-orange;
+						border-color: $color-orange;
+					}
+					.vip {
+						color: $color-yellow;
+						border-color: $color-yellow;
+					}
+				}
+			}
+		}
+
+		.card-action {
+			background-color: inherit;
+			border-top: 1px solid $color-border;
+			position: relative;
+			padding: 5px 10px;
+			font-size: 0.87rem;
+			font-weight: 300;
+			color: $color-text-2;
+
+			.value {
+				margin: 0 30px 0 0;
+				span {
+					color: $color-yellow;
+					margin: 0 5px 0 0;
+				} 
+			}
+			.music-gender {
+				span {
+					color: $color-blue;
+					margin: 0 5px 0 0;
+				} 
+			}
+		}
+	}
+}
+
+.party-detail {
+	height: 100%;
+
+	.tab-detail {
+		.header {
+			.cover {
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+			.house-logo {
+				position: relative;
+				top: -60px;
+				text-align: center;
+				z-index: 997;
+				img {
+					width: 80px;
+					height: 80px;
+					border-radius: 100%;
+					border: 2px solid $white;
+				}
+			}
+		}
+		.detail {
+			background: $white;
+			border-radius: 5px;
+			position: relative;
+			top: -100px;
+			padding: 10px;
+			h2 {
+				font-size: 1.12rem;
+				font-weight: 400;
+				margin: 25px 0 0 0;
+				padding: 0;
+				text-align: center;
+			}
+			.info {
+				ul {
+					padding: 0 0 10px 0;
+					border-bottom: 1px solid #f5f5f5;
+					li {
+						font-size: 0.87rem;
+						font-weight: 300;
+						margin: 0 0 10px 0;
+						i {
+							margin: 0 5px 0 0;
+							color: $color-text-2;
+							width: 14px;
+							text-align: center;
+						}
+					}
+				}
+				h3 {
+					font-size: 1rem;
+					font-weight: 400;
+					margin: 25px 0 0 0;
+					padding: 0;
+					color: $color-text-1;
+				}
+				p{
+					color: $color-text-2;
+					font-size: 0.93rem
+				}
+			}
+		}
+	}
+}

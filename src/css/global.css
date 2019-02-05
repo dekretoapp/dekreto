@@ -1,0 +1,215 @@
+@charset "UTF-8";
+html, body {
+  font-family: Roboto, 'sans-serif';
+  font-size: 100%;
+  background: #F0F0F0;
+  color: #232C31;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%; }
+
+/* Resseta as classes do Pushpin, na index*/
+.pinned {
+  position: fixed !important;
+  top: 50px !important; }
+
+.pin-top {
+  position: relative !important;
+  top: 50px !important; }
+
+/* Resseta todas as sombras dos componentes do Materialize */
+.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-small, .btn-floating, .dropdown-content, .collapsible, .sidenav {
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+
+/* Reseta componente de TAB - Faz com que, no swipe, o conteúdo alcance 100% da tela */
+.tabs-content.carousel {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll; }
+
+.tabs-content.carousel .carousel-item {
+  width: 100%;
+  height: 100%; }
+
+header {
+  /* Corrige a header fixada ao topo, pois os elementos estavam passando por trás, por causa do position:fixed. As duas classes abaixo ficam por trás ocupando o espaço da header*/ }
+  header nav.top {
+    color: #fff;
+    background-color: #232C31;
+    width: 100%;
+    height: 50px;
+    line-height: 56px;
+    position: fixed;
+    top: 0;
+    z-index: 999; }
+    header nav.top h1 {
+      font-size: 4.2rem;
+      line-height: initial;
+      margin: 0; }
+    header nav.top .nav-wrapper {
+      position: relative;
+      height: 100%; }
+    header nav.top .brand-logo {
+      position: absolute;
+      color: #fff;
+      display: inline-block;
+      font-size: 1.25rem;
+      padding: 0;
+      top: 5px;
+      width: 85%; }
+      header nav.top .brand-logo img {
+        width: 120px; }
+      header nav.top .brand-logo span {
+        font-size: 0.75rem;
+        display: block;
+        opacity: 0.8; }
+      header nav.top .brand-logo i {
+        height: 35px;
+        line-height: 35px;
+        width: 26px; }
+  header nav.nav-extended {
+    color: #fff;
+    background-color: #232C31;
+    position: fixed;
+    top: 50px;
+    z-index: 999;
+    /* Reseta o item em foco nas tabs*/ }
+    header nav.nav-extended .tabs .tab a:focus, header nav.nav-extended .tabs .tab a:focus.active {
+      background-color: initial;
+      outline: none; }
+  header .nav-top-fix-fixed-height {
+    height: 50px; }
+  header .nav-extended-fix-fixed-height {
+    height: 48px; }
+
+.card-list .wrap-data {
+  height: 33px;
+  top: -50px;
+  position: relative; }
+  .card-list .wrap-data .data {
+    display: block;
+    background: #F0F0F0;
+    padding: 5px 0 5px 0;
+    width: 100%;
+    z-index: 998;
+    padding: 5px; }
+.card-list .card {
+  position: relative;
+  margin: 5px;
+  background-color: #fff;
+  -webkit-transition: -webkit-box-shadow .25s;
+  transition: -webkit-box-shadow .25s;
+  transition: box-shadow .25s;
+  transition: box-shadow .25s, -webkit-box-shadow .25s;
+  border-radius: 5px; }
+  .card-list .card .card-content {
+    padding: 0;
+    border-radius: 0; }
+  .card-list .card.horizontal {
+    padding: 5px;
+    display: inline-flex; }
+    .card-list .card.horizontal .card-image img {
+      width: 45px;
+      height: 45px;
+      border-radius: 100%; }
+    .card-list .card.horizontal .card-stacked {
+      color: #777777; }
+      .card-list .card.horizontal .card-stacked .card-content {
+        margin: 0 0 10px 10px; }
+        .card-list .card.horizontal .card-stacked .card-content:last-child {
+          margin: 0 0 0 10px; }
+        .card-list .card.horizontal .card-stacked .card-content h3 {
+          font-size: 1rem;
+          font-weight: 500;
+          font-style: italic;
+          margin: 0;
+          color: #F34207; }
+        .card-list .card.horizontal .card-stacked .card-content h4 {
+          font-size: 0.87rem;
+          font-weight: 400;
+          margin: 5px 0 0 0; }
+        .card-list .card.horizontal .card-stacked .card-content .party-type {
+          padding: 3px;
+          border: 1px solid;
+          border-radius: 3px;
+          line-height: initial;
+          font-size: 0.68rem;
+          font-weight: 500;
+          text-transform: uppercase; }
+        .card-list .card.horizontal .card-stacked .card-content .party-location {
+          font-size: 0.87rem;
+          font-weight: 300; }
+          .card-list .card.horizontal .card-stacked .card-content .party-location .fa {
+            margin: 0 5px 0 0; }
+        .card-list .card.horizontal .card-stacked .card-content .openbar {
+          color: #F38207;
+          border-color: #F38207; }
+        .card-list .card.horizontal .card-stacked .card-content .vip {
+          color: #F3C007;
+          border-color: #F3C007; }
+  .card-list .card .card-action {
+    background-color: inherit;
+    border-top: 1px solid #F5F5F5;
+    position: relative;
+    padding: 5px 10px;
+    font-size: 0.87rem;
+    font-weight: 300;
+    color: #777777; }
+    .card-list .card .card-action .value {
+      margin: 0 30px 0 0; }
+      .card-list .card .card-action .value span {
+        color: #F3C007;
+        margin: 0 5px 0 0; }
+    .card-list .card .card-action .music-gender span {
+      color: #07ACF3;
+      margin: 0 5px 0 0; }
+
+.party-detail {
+  height: 100%; }
+  .party-detail .tab-detail .header .cover img {
+    width: 100%;
+    height: auto; }
+  .party-detail .tab-detail .header .house-logo {
+    position: relative;
+    top: -60px;
+    text-align: center;
+    z-index: 997; }
+    .party-detail .tab-detail .header .house-logo img {
+      width: 80px;
+      height: 80px;
+      border-radius: 100%;
+      border: 2px solid #fff; }
+  .party-detail .tab-detail .detail {
+    background: #fff;
+    border-radius: 5px;
+    position: relative;
+    top: -100px;
+    padding: 10px; }
+    .party-detail .tab-detail .detail h2 {
+      font-size: 1.12rem;
+      font-weight: 400;
+      margin: 25px 0 0 0;
+      padding: 0;
+      text-align: center; }
+    .party-detail .tab-detail .detail .info ul {
+      padding: 0 0 10px 0;
+      border-bottom: 1px solid #f5f5f5; }
+      .party-detail .tab-detail .detail .info ul li {
+        font-size: 0.87rem;
+        font-weight: 300;
+        margin: 0 0 10px 0; }
+        .party-detail .tab-detail .detail .info ul li i {
+          margin: 0 5px 0 0;
+          color: #777777;
+          width: 14px;
+          text-align: center; }
+    .party-detail .tab-detail .detail .info h3 {
+      font-size: 1rem;
+      font-weight: 400;
+      margin: 25px 0 0 0;
+      padding: 0;
+      color: #232C31; }
+    .party-detail .tab-detail .detail .info p {
+      color: #777777;
+      font-size: 0.93rem; }
