@@ -1,25 +1,313 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <title>Ionic App</title>
 
-  <base href="/" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta charset="utf-8">
 
-  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="format-detection" content="telephone=no" />
-  <meta name="msapplication-tap-highlight" content="no" />
+	<!-- FONTS -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 
-  <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
+	<!-- Materialize -->
+	<link rel="stylesheet" href="libs/materialize/css/materialize.min.css">
 
-  <!-- add to homescreen for ios -->
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<!-- CSS Global -->
+	<link rel="stylesheet" href="css/global.css">
+
+	<!-- LIBS JavaScript -->
+
+	<script type="application/javascript" src="libs/jQuery/jquery-3.3.1.min.js"></script>
+	<script type="application/javascript" src="libs/materialize/js/materialize.min.js"></script>
+
+	<script type="application/javascript" src="js/lista.json"></script>
+	<script type="application/javascript" src="js/info-casas.json"></script>
+	<script type="application/javascript" src="js/global.js"></script>
+
+
+
+	<title>Dekreto! Encontre as melhores baladas de São Paulo</title>
 </head>
-
 <body>
-  <app-root></app-root>
-</body>
+	<!-- head -->
+	<header id="header">
+		<nav class="top">
+			<div class="nav-wrapper">
+				<h1 class="brand-logo left"><img src="images/dekreto.png" alt=""><span>Encontre as melhores baladas de SP</span></h1>
+				<ul class="right">
+					<li><a href="#"><i class="material-icons">more_vert</i></a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="nav-top-fix-fixed-height"></div>
+	</header>
 
+	<div class="card-list">
+		<div id="dia1">
+			<div class="wrap-data">
+				<div class="data" id="data1">23/01/2019</div>
+			</div>
+			<div class="cards"></div>
+		</div>
+		
+		<div id="dia2">
+			<div class="wrap-data">
+				<div class="data" id="data2">24/01/2019</div>
+			</div>
+			<div class="cards"></div>
+		</div>
+		<div id="dia3">
+			<div class="wrap-data">
+				<div class="data" id="data3">25/01/2019</div>
+			</div>
+			<div class="cards"></div>
+		</div>
+		<div id="dia4">
+			<div class="wrap-data">
+				<div class="data" id="data4">26/01/2019</div>
+			</div>
+			<div class="cards"></div>
+		</div>
+		<div id="dia5">
+			<div class="wrap-data">
+				<div class="data" id="data5">27/01/2019</div>
+			</div>
+			<div class="cards"></div>
+		</div>
+		<div id="dia6">
+			<div class="wrap-data">
+				<div class="data" id="data6">28/01/2019</div>
+			</div>
+			<div class="cards"></div>
+		</div>
+		<!-- <div class="card">
+			<a href="detalhe.html" title="Ir para a festa">
+				<div class="card horizontal">
+					<div class="card-image">
+						<img src="images/thumb-lab.png" alt="">
+					</div>
+					<div class="card-stacked">
+						<div class="card-content">
+							<h3>Lab Club</h3>
+							<h4>Festa do Zodíaco☆Especial Aquário☆Pop☆Funk</h4>
+						</div>
+						<div class="card-content">
+
+							<div class="party-location right"><span class="fa fa-map-marker-alt"></span>Augusta e região</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-action">
+					<div class="value left"><span class="fa fa-dollar-sign"></span>De R$30 a R$60</div>
+					<div class="music-gender"><span class="fa fa-music"></span>Rock / Pop / Funk</div>
+				</div>
+			</a>
+		</div>-->
+		
+
+		<!-- DIA 2 
+		<div class="wrap-data">
+			<div class="data" id="data2">31/01/2019</div>
+		</div>
+		<div class="card">
+			<div class="card horizontal">
+				<div class="card-image">
+					<img src="images/thumb-beco.png" alt="">
+				</div>
+				<div class="card-stacked">
+					<div class="card-content">
+						<h3>Beco 203</h3>
+						<h4>QUINTA! Open Bar do Assunção, vem ficar doidão! Vésp. De Feriado</h4>
+					</div>
+					<div class="card-content">
+						<div class="party-type openbar left">OPEN BAR</div>
+						<div class="party-location right"><span class="fa fa-map-marker-alt"></span>Augusta e região</div>
+					</div>
+				</div>
+			</div>
+			<div class="card-action">
+				<div class="value left"><span class="fa fa-dollar-sign"></span>De R$65 a R$90</div>
+				<div class="music-gender"><span class="fa fa-music"></span>Rock / Pop</div>
+			</div>
+		</div>
+		
+
+		DIA 3 
+		<div class="wrap-data">
+			<div class="data" id="data3">01/02/2019</div>
+		</div>
+		<div class="card">
+			<div class="card horizontal">
+				<div class="card-image">
+					<img src="images/thumb-lab.png" alt="">
+				</div>
+				<div class="card-stacked">
+					<div class="card-content">
+						<h3>Lab Club</h3>
+						<h4>Festa do Zodíaco☆Especial Aquário☆Pop☆Funk</h4>
+					</div>
+					<div class="card-content">
+
+						<div class="party-location right"><span class="fa fa-map-marker-alt"></span>Augusta e região</div>
+					</div>
+				</div>
+			</div>
+			<div class="card-action">
+				<div class="value left"><span class="fa fa-dollar-sign"></span>De R$30 a R$60</div>
+				<div class="music-gender"><span class="fa fa-music"></span>Rock / Pop / Funk</div>
+			</div>
+		</div>
+		
+
+		DIA 4 
+		<div class="wrap-data">
+			<div class="data" id="data4">02/02/2019</div>
+		</div>
+		<div class="card">
+			<div class="card horizontal">
+				<div class="card-image">
+					<img src="images/thumb-lab.png" alt="">
+				</div>
+				<div class="card-stacked">
+					<div class="card-content">
+						<h3>Lab Club</h3>
+						<h4>Festa do Zodíaco☆Especial Aquário☆Pop☆Funk</h4>
+					</div>
+					<div class="card-content">
+
+						<div class="party-location right"><span class="fa fa-map-marker-alt"></span>Augusta e região</div>
+					</div>
+				</div>
+			</div>
+			<div class="card-action">
+				<div class="value left"><span class="fa fa-dollar-sign"></span>De R$30 a R$60</div>
+				<div class="music-gender"><span class="fa fa-music"></span>Rock / Pop / Funk</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card horizontal">
+				<div class="card-image">
+					<img src="images/thumb-blitz.png" alt="">
+				</div>
+				<div class="card-stacked">
+					<div class="card-content">
+						<h3>Blitz Haus</h3>
+						<h4>Quem Pegou, Pegou! • OPEN BAR de Pré-Carnaval na Blitz</h4>
+					</div>
+					<div class="card-content">
+						<div class="party-type openbar left">OPEN BAR</div>
+						<div class="party-location right"><span class="fa fa-map-marker-alt"></span>Augusta e região</div>
+					</div>
+				</div>
+			</div>
+			<div class="card-action">
+				<div class="value left"><span class="fa fa-dollar-sign"></span>De R$65 a R$90</div>
+				<div class="music-gender"><span class="fa fa-music"></span>Funk / Pop</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card horizontal">
+				<div class="card-image">
+					<img src="images/thumb-selva.png" alt="">
+				</div>
+				<div class="card-stacked">
+					<div class="card-content">
+						<h3>Selva</h3>
+						<h4>Escolhi Esperar ✞ Bota Fora de Férias! ✞ (Vip até 00h!)</h4>
+					</div>
+					<div class="card-content">
+						<div class="party-type vip left">ALL VIP ATÉ 0h</div>
+						<div class="party-location right"><span class="fa fa-map-marker-alt"></span>Augusta e região</div>
+					</div>
+				</div>
+			</div>
+			<div class="card-action">
+				<div class="value left"><span class="fa fa-dollar-sign"></span>De R$15 a R$50</div>
+				<div class="music-gender"><span class="fa fa-music"></span>Funk / Pop / Twerk</div>
+			</div>
+		</div>
+
+		DIA 5 
+		<div class="wrap-data">
+			<div class="data" id="data5">03/02/2019</div>
+		</div>
+		<div class="card">
+			<div class="card horizontal">
+				<div class="card-image">
+					<img src="images/thumb-lab.png" alt="">
+				</div>
+				<div class="card-stacked">
+					<div class="card-content">
+						<h3>Lab Club</h3>
+						<h4>Festa do Zodíaco☆Especial Aquário☆Pop☆Funk</h4>
+					</div>
+					<div class="card-content">
+
+						<div class="party-location right"><span class="fa fa-map-marker-alt"></span>Augusta e região</div>
+					</div>
+				</div>
+			</div>
+			<div class="card-action">
+				<div class="value left"><span class="fa fa-dollar-sign"></span>De R$30 a R$60</div>
+				<div class="music-gender"><span class="fa fa-music"></span>Rock / Pop / Funk</div>
+			</div>
+		</div>
+		
+
+		DIA 6 
+		<div class="wrap-data">
+			<div class="data" id="data6">04/02/2019</div>
+		</div>
+		<div class="card">
+			<div class="card horizontal">
+				<div class="card-image">
+					<img src="images/thumb-lab.png" alt="">
+				</div>
+				<div class="card-stacked">
+					<div class="card-content">
+						<h3>Lab Club</h3>
+						<h4>Festa do Zodíaco☆Especial Aquário☆Pop☆Funk</h4>
+					</div>
+					<div class="card-content">
+
+						<div class="party-location right"><span class="fa fa-map-marker-alt"></span>Augusta e região</div>
+					</div>
+				</div>
+			</div>
+			<div class="card-action">
+				<div class="value left"><span class="fa fa-dollar-sign"></span>De R$30 a R$60</div>
+				<div class="music-gender"><span class="fa fa-music"></span>Rock / Pop / Funk</div>
+			</div>
+		</div>
+		
+
+		DIA 7 
+		<div class="wrap-data">
+			<div class="data" id="data7">05/02/2019</div>
+		</div>
+		<div class="card">
+			<div class="card horizontal">
+				<div class="card-image">
+					<img src="images/thumb-lab.png" alt="">
+				</div>
+				<div class="card-stacked">
+					<div class="card-content">
+						<h3>Lab Club</h3>
+						<h4>Festa do Zodíaco☆Especial Aquário☆Pop☆Funk</h4>
+					</div>
+					<div class="card-content">
+
+						<div class="party-location right"><span class="fa fa-map-marker-alt"></span>Augusta e região</div>
+					</div>
+				</div>
+			</div>
+			<div class="card-action">
+				<div class="value left"><span class="fa fa-dollar-sign"></span>De R$30 a R$60</div>
+				<div class="music-gender"><span class="fa fa-music"></span>Rock / Pop / Funk</div>
+			</div>
+		</div>-->
+
+	</div>
+</body>
 </html>
